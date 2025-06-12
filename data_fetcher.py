@@ -24,7 +24,6 @@ def fetch_data(animal_name):
     """
     api_url = 'https://api.api-ninjas.com/v1/animals?name={}'.format(animal_name)
     API_KEY = os.getenv('API_KEY')
-    print(API_KEY)
     response = requests.get(api_url, headers={'X-Api-Key': API_KEY})
     if response.status_code == requests.codes.ok:
       result = response.json()
