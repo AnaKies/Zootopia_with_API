@@ -1,4 +1,4 @@
 requests
 os
-dotenv
+python-dotenv
 json

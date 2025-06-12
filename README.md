@@ -6,7 +6,8 @@ The generated animals data are displayed in a generated HTML file.
 
 ## Installation
 
-To install this project, simply clone the repository from https://github.com/AnaKies/Zootopia_with_API.git and install the dependencies in requirements.txt using `pip`
+To install this project, simply clone the repository from https://github.com/AnaKies/Zootopia_with_API.git 
+Install the dependencies in requirements.txt using `pip install -r requirements.txt`
 
 ## Usage
 
