@@ -1,6 +1,5 @@
 from manage_html import *
-from html_communication import search_for_animal_in_api
-
+import data_fetcher
 
 def get_user_input_for_skin_type(unique_skin_types):
     """
@@ -27,7 +26,7 @@ def main():
         chosen_animal = input("Enter a name of an animal: ").strip()
 
         # get JSON data from API
-        animals_data = search_for_animal_in_api(chosen_animal)
+        animals_data = data_fetcher.fetch_data(chosen_animal)
         if animals_data:
             html_formatted_text = serialize_all_animals(animals_data)
         else:
