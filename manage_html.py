@@ -15,6 +15,16 @@ def serialize_all_animals(animals_data):
     return output_animals_data
 
 
+def create_message_missing_animal(missing_animal_name):
+    output_html = ("<li class='cards__item'>\n"
+                           "<div class='card__title'>")
+    output_html += f"<h2>The animal {missing_animal_name} doesn't exist.</h2>"
+    output_html += ("</div>"
+                    "</li>\n")
+    return output_html
+
+
+
 def serialize_animal(animal_obj):
     """
     Serializes a single animal to HTML

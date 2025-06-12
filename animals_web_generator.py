@@ -28,16 +28,15 @@ def main():
 
         # get JSON data from API
         animals_data = search_for_animal_in_api(chosen_animal)
-
-        if not animals_data:
+        if animals_data:
+            html_formatted_text = serialize_all_animals(animals_data)
+        else:
+            html_formatted_text = create_message_missing_animal(chosen_animal)
             print("No animals found.")
-            return
 
-        # manage the HTML
-        html_formatted_animals = serialize_all_animals(animals_data)
         template_html_for_animals = get_template_html()
         full_html_with_animals = insert_new_data_in_html_template(
-            template_html_for_animals, html_formatted_animals)
+            template_html_for_animals, html_formatted_text)
         file_name = "animals.html"
         create_html_file(file_name, full_html_with_animals)
         print(f"Website was successfully generated to the file {file_name}.")
