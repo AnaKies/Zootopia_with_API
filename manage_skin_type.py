@@ -8,7 +8,7 @@ def get_unique_skin_types(animals_data):
 
     for animal in animals_data:
         if "characteristics" in animal.keys():
-            if "skin_type" in animal["characteristics"].keys():
+            if "skin_type" in animal["characteristics"]:
                 # create a list with unique skin types
                 if (animal["characteristics"]["skin_type"]
                         not in unique_skin_types):

@@ -1,26 +1,6 @@
 from manage_skin_type import *
 from manage_html import *
-
-
-def load_data(file_path):
-    """
-    Loads JSON file.
-    :param file_path: path to the JSON file
-    :return: JSON data as string
-    """
-    try:
-        # use encoding for correct representation of
-        # such special symbols like an apostrophe
-        with open(file_path, "r", encoding="utf-8") as json_file:
-            return json.load(json_file)
-
-    except FileNotFoundError as error:
-        print(f"Error: File {file_path} is not found.\n{error}")
-    except json.JSONDecodeError as error:
-        print(f"Error: JSON {file_path} is not valid.\n{error}")
-    except Exception as error:
-        print(f"Error: Unexpected error at reading {file_path}.\n{error}")
-    return None
+from html_communication import search_for_animal_in_api
 
 
 def get_user_input(unique_skin_types):
@@ -45,8 +25,8 @@ def main():
     all the animals with the selected skin type.
     """
     try:
-        # get JSON data
-        animals_data = load_data("animals_data.json")
+        # get JSON data from API
+        animals_data = search_for_animal_in_api("fox")
 
         # manage the skin type
         unique_skin_types = get_unique_skin_types(animals_data)
