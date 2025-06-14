@@ -1,6 +1,3 @@
-import json
-
-
 def serialize_all_animals(animals_data):
     """
     Create HTML with animal data.
@@ -16,13 +13,17 @@ def serialize_all_animals(animals_data):
 
 
 def create_message_missing_animal(missing_animal_name):
+    """
+    Displays the information message for the  missing animal.
+    :param Missing_animal_name: name of the animal that the user entered.
+    :return: HTML code containing the message for missing animal.
+    """
     output_html = ("<li class='cards__item'>\n"
-                           "<div class='card__title'>")
+                   "<div class='card__title'>")
     output_html += f"<h2>The animal {missing_animal_name} doesn't exist.</h2>"
     output_html += ("</div>"
                     "</li>\n")
     return output_html
-
 
 
 def serialize_animal(animal_obj):
@@ -117,8 +118,6 @@ def get_template_html():
 
     except FileNotFoundError as error:
         print(f"Error: File {file_name} is not found.\n{error}")
-    except json.JSONDecodeError as error:
-        print(f"Error: JSON {file_name} is not valid.\n{error}")
     except Exception as error:
         print(f"Error: Unexpected error at reading {file_name}.\n{error}")
     return None
@@ -157,7 +156,5 @@ def create_html_file(file_name, html_content):
 
     except FileNotFoundError as error:
         print(f"Error: File {file_name} is not found.\n{error}")
-    except json.JSONDecodeError as error:
-        print(f"Error: JSON {file_name} is not valid.\n{error}")
     except Exception as error:
         print(f"Error: Unexpected error at writing {file_name}.\n{error}")

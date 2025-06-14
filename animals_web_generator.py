@@ -1,5 +1,9 @@
-from manage_html import *
 import data_fetcher
+from manage_html import (serialize_all_animals,
+                         create_message_missing_animal,
+                         create_html_file, get_template_html,
+                         insert_new_data_in_html_template)
+
 
 def get_user_input_for_skin_type(unique_skin_types):
     """
